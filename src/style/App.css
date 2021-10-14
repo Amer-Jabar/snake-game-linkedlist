@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap');
+
+* {
+  font-family: 'fira sans';
+}
+
+html, body, #root, main {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('./background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.gameplayControl {
+  padding: 0.75em;
+  position: absolute;
+  top: 50px;
+  border: 3px solid #97ded3;
+  border-radius: 0.5em;
+  color: white;
+  background: #3baca7;
+}
+
+.gameplayControl * {
+  margin-block: 0.5em;
+}
+
+.fail {
+  top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-color: #de9797;
+  background-color: #e56464;
+  animation: failMessage 0.5s ease-in-out forwards normal;
+}
+
+.fail button {
+  border: none;
+  padding: 0.5em 2em;
+  background: #f9e1e1;
+  box-shadow: 0px 0px 5px 0px #cf5353;
+  border-radius: 5em;
+  cursor: pointer;
+}
+
+table {
+  margin-top: 5em;
+  border: solid green 3px;
+  box-shadow: 0px 0px 2px 3px #34928d;
+}
+
+tr {
+  display: flex;
+}
+
+td {
+  width: 2em;
+  height: 2em;
+}
+
+.snake {
+  border-radius: 0.5em;
+  background-color: #3c9691;
+}
+
+.foodScaler {
+  animation: showUp 0.5s normal forwards linear;
+}
+
+.food {
+  width: 100%;
+  height: 100%;
+  color: cadetblue;
+  animation: foodRotation 2s linear infinite normal;
+}
+
+@keyframes foodRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes showUp {
+  0% {
+    transform: scale(0.25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes failMessage {
+  0% {
+    top: -150px;
+  }
+
+  100% {
+    top: 25px;
+  }
+}
